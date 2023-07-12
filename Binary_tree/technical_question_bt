@@ -1,0 +1,22 @@
+Could you explain the difference between a full binary tree and a complete binary tree?
+Describe in your own words what happens during an inorder traversal of a binary tree.
+Let's say you're given the inorder and preorder traversals of a binary tree, but not the tree itself. How would you go about reconstructing the original tree?
+For a given binary tree, what is the maximum number of nodes you can have at level 'l'? Could you explain your answer?
+When we want to perform a depth-first traversal of a binary tree, what kind of data structure should we use and why?
+Could you clarify what we mean when we refer to 'leaf nodes' in a binary tree?
+If you have a binary tree with 'n' nodes, how many null pointers will there be? Could you explain how you arrived at your answer?
+Suppose I give you the post-order traversal of a binary tree as 7, 10, 4, 3, 1. Can you predict what the pre-order traversal will be? What additional information, if any, would you need?
+What kind of output does an inorder traversal of a binary search tree provide? Could you provide a brief explanation?
+Could you explain the time complexity of searching for an element in a binary search tree? In what scenario would this operation be most efficient, and when would it be least efficient?
+
+
+A full binary tree is a tree in which every node has either 0 or 2 children. A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible.
+In an inorder traversal of a binary tree, the left subtree is visited first, then the root node, and finally the right subtree.
+If given inorder and preorder traversals of a tree, we can construct the binary tree by selecting the first element of the preorder traversal as the root of the tree, and splitting the inorder traversal into left and right subtrees at the root. We can then recursively apply this process to construct the full tree.
+At any level 'l' of a binary tree, the maximum number of nodes can be 2^(l-1). This is because each level has twice the number of nodes as the level above it.
+A stack data structure is used for depth-first traversal of a binary tree. This is because depth-first traversal follows a Last-In-First-Out (LIFO) pattern, which is a property of stacks.
+'Leaf nodes' in a binary tree are nodes that do not have any children. They are the terminal nodes at the ends of the tree.
+A binary tree with 'n' nodes has n+1 null pointers. This is because each node has 2 pointers (left and right), and all except the root node is pointed to by another node, leaving n+1 pointers not pointing to any node (null).
+Without additional information, it's impossible to predict the exact pre-order traversal from the post-order traversal. We would also need the inorder traversal to accurately reconstruct the tree.
+An inorder traversal of a binary search tree provides the nodes in ascending order. This is due to the property of binary search trees where every node's value is larger than all nodes in its left subtree and smaller than all nodes in its right subtree.
+The time complexity of searching for an element in a binary search tree is O(log n) in the average case, and O(n) in the worst case. It is most efficient when the tree is balanced, as this ensures that each comparison allows us to discard half of the remaining tree. It is least efficient when the tree is unbalanced or degenerates into a linked list.
